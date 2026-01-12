@@ -1,164 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chottu Chart EA | Advanced MT5 Automation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chottu Chart EA | Advanced MT5 Automation</title>
+    <style>
+        :root {
+            --neon-cyan: #00e5ff;
+            --dark-bg: #050a14;
+            --card-bg: #0b1220;
+        }
 
-<style>
-:root {
-    --neon-cyan: #00e5ff;
-    --dark-bg: #050a14;
-    --card-bg: #0b1220;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    background: radial-gradient(circle at top, #00e5ff15, var(--dark-bg));
-    color: white;
-}
+        /* Enables smooth sliding between sections */
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: radial-gradient(circle at top, #00e5ff15, var(--dark-bg));
+            color: white;
+            overflow-x: hidden;
+        }
 
-.card {
-    background: var(--card-bg);
-    max-width: 450px;
-    width: 100%;
-    padding: 40px;
-    border-radius: 24px;
-    text-align: center;
-    border: 1px solid rgba(0,229,255,0.2);
-    box-shadow: 0 0 30px rgba(0,229,255,0.1);
-    margin-bottom: 40px;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-.logo {
-    width: 120px;
+        /* Reusable Card Style */
+        .card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+            margin-bottom: 50px;
+            /* Space between Landing and Payment */
+        }
+
+        .logo {
+              width: 120px;
     height: 120px;
-    border-radius: 50%;
     object-fit: contain;
+    border-radius: 50%;
     background: #000;
+    padding: 0px;
     box-shadow: 0 0 25px var(--neon-cyan);
-}
+        }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin: 25px 0;
-}
+        /* Landing Page Elements */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
 
-.stat-item {
-    background: rgba(255,255,255,0.05);
-    padding: 15px;
-    border-radius: 12px;
-}
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+        }
 
-.price-tag {
-    font-size: 42px;
-    color: var(--neon-cyan);
-    margin: 20px 0;
-}
+        .stat-item span {
+            display: block;
+            font-size: 11px;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+        }
 
-.upi-section {
-    background: rgba(0,229,255,0.05);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px 0;
-}
+        .price-tag {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 20px 0;
+            color: var(--neon-cyan);
+        }
 
-.upload-area {
-    border: 2px dashed rgba(0,229,255,0.3);
-    border-radius: 12px;
-    padding: 20px;
-    cursor: pointer;
-}
+        /* Payment Specific Elements */
+        .upi-section {
+            background: rgba(0, 229, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
 
-#preview {
-    max-width: 100%;
-    margin-top: 10px;
-    display: none;
-    border-radius: 8px;
-}
+        .upload-area {
+            border: 2px dashed rgba(0, 229, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: block;
+        }
 
-.btn {
-    display: block;
-    width: 100%;
-    padding: 18px;
-    margin-top: 20px;
-    background: var(--neon-cyan);
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        #preview {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            display: none;
+        }
 
-input[type="file"] {
-    display: none;
-}
-</style>
+        /* Shared Button Style */
+        .btn {
+            display: block;
+            padding: 18px;
+            background: var(--neon-cyan);
+            color: #000;
+            border-radius: 12px;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+            transition: 0.3s;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #fff;
+            box-shadow: 0 0 25px var(--neon-cyan);
+            transform: scale(1.02);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="card" id="product">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocI3meF1bQ7z4X02tIq-8Mceov6eGZknAatZrujfN3NzbCIz5WA=s288-c-no" alt="Logo" class="logo">
+            <h1>Chottu Chart EA</h1>
+            <p style="color: #94a3b8;">Auto Buy/Sell MT5 EA with smart risk control</p>
 
-    <!-- PRODUCT CARD -->
-    <div class="card">
-        <img src="https://lh3.googleusercontent.com/a/ACg8ocI3meF1bQ7z4X02tIq-8Mceov6eGZknAatZrujfN3NzbCIz5WA=s288-c-no" class="logo">
-        <h1>Chottu Chart EA</h1>
-        <p style="color:#94a3b8;">Auto Buy/Sell MT5 EA with smart risk control</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span>Daily Profit</span><b>30%</b></div>
+                <div class="stat-item"><span>Risk Level</span><b>Low/Smart</b></div>
+            </div>
 
-        <div class="stats-grid">
-            <div class="stat-item"><b>30%</b><br>Daily Profit</div>
-            <div class="stat-item"><b>Low</b><br>Risk Level</div>
+            <div class="price-tag">$250</div>
+            <a href="#payment" class="btn">Get Lifetime Access</a>
         </div>
 
-        <div class="price-tag">$250</div>
-        <a href="#payment" class="btn">Get Lifetime Access</a>
-    </div>
+        <div class="card" id="payment">
+            <h2>Secure Checkout</h2>
+            <p style="color: #94a3b8;">Pay via UPI & Upload Screenshot</p>
 
-    <!-- PAYMENT CARD -->
-    <div class="card" id="payment">
-        <h2>Secure Checkout</h2>
-
-        <div class="upi-section">
-            <b>yourname@upi</b>
-        </div>
-
-        <!-- SINGLE FORM ONLY -->
-        <form action="thankyou.html" method="GET">
-
-            <label class="upload-area">
-                <input type="file" accept="image/*" onchange="previewImage(event)" required>
-                <span id="upload-text">📸 Upload Payment Screenshot</span>
-                <img id="preview">
+            <div class="upi-section">
+                <span style="font-size: 12px;">OFFICIAL UPI ID</span>
+                <div style="color: var(--neon-cyan); font-size: 1.2em; margin: 10px 0;"><b>chottuchart@axl</b></div>
+                <a href="upi://pay?pa=chottuchart@axl&pn=ChottuChart&am=10400&cu=INR" class="btn" style="margin-bottom:10px;">
+                    Open Any UPI App
+                </a>
+                
+                <a href="tez://upi/pay?pa=chottuchart@axl&pn=ChottuChart&am=10400&cu=INR" class="btn" style="margin-bottom:10px;">
+                    Pay with Google Pay
+                </a>
+                
+                <a href="phonepe://pay?pa=chottuchart@axl&pn=ChottuChart&am=10400&cu=INR" class="btn">
+                    Pay with PhonePe
+                </a>
+            </div>
+<form action="thankyou.html" method="GET">
+            <form action="YOUR_BACKEND_URL" method="POST" enctype="multipart/form-data">
+                <label class="upload-area">
+                <input type="file" name="screenshot" accept="image/*" onchange="previewImage(event)" required>
+                <span id="upload-text">📸 Tap to Upload Screenshot</span>
+                <img id="preview" src="" alt="Preview">
             </label>
-
-            <button type="submit" class="btn">Verify & Finalize</button>
-        </form>
+                <button type="submit" class="btn" style="margin-top: 20px;">Verify & Finalize</button>
+            </form>
+        </div>
     </div>
 
-</div>
-
-<script>
-function previewImage(event) {
-    const reader = new FileReader();
-    reader.onload = function() {
-        document.getElementById("preview").src = reader.result;
-        document.getElementById("preview").style.display = "block";
-        document.getElementById("upload-text").style.display = "none";
+    <script>
+        function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const output = document.getElementById('preview');
+            const text = document.getElementById('upload-text');
+            output.src = reader.result;
+            output.style.display = "block";
+            text.style.display = "none";
+        };
+        reader.readAsDataURL(event.target.files[0]);
     }
-    reader.readAsDataURL(event.target.files[0]);
-}
-</script>
+    </script>
 
 </body>
+
 </html>
