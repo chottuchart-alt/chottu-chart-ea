@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chottu Chart EA | Automated Trading System</title>
 
     <style>
@@ -20,11 +20,29 @@
             margin-bottom: 10px;
         }
 
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(to right, #007bff, #00c6ff);
+            position: relative;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url("https://wordpress.quantvps.com/wp-content/uploads/image_907d77fca84d92eae245fb9e94f9a75f-1024x683.jpeg");
+            background-size: cover;
+            background-position: center;
             color: #fff;
-            padding: 70px 20px;
+            padding: 90px 20px;
             text-align: center;
+        }
+
+        /* LOGO */
+        .hero-logo {
+            position: absolute;
+            top: 50px;
+            right: 45px;
+        }
+
+        .hero-logo img {
+            height: 100px;
+            width: 43px;
         }
 
         .hero h1 {
@@ -39,10 +57,10 @@
 
         .btn {
             background: #fff;
-            color: #007bff;
+            color: #223a87;
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1rem;
             font-weight: bold;
             display: inline-block;
@@ -53,6 +71,10 @@
             max-width: 1100px;
             margin: auto;
             padding: 30px 20px;
+        .container {
+            background: #172e73;
+            border-radius: 20px;
+            }
         }
 
         .section {
@@ -76,7 +98,7 @@
         }
 
         .feature h3 {
-            color: #007bff;
+            color: #223a87;
         }
 
         .formbox {
@@ -89,6 +111,7 @@
         }
 
         .formbox input,
+        .formbox textarea,
         .formbox button {
             width: 100%;
             padding: 14px;
@@ -99,7 +122,7 @@
         }
 
         .formbox button {
-            background: #007bff;
+            background: #235c48;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -114,7 +137,8 @@
             font-size: 0.9rem;
         }
 
-        @media(max-width:768px) {
+        /* MOBILE */
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -122,113 +146,92 @@
             .features {
                 flex-direction: column;
             }
+
+            .hero-logo img {
+                height: 40px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
+
+        <!-- LOGO -->
+        <div class="hero-logo">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocI3meF1bQ7z4X02tIq-8Mceov6eGZknAatZrujfN3NzbCIz5WA=s288-c-no" alt="Chottu Chart EA Logo">
+        </div>
+
         <h1>Chottu Chart EA</h1>
-        <p>Smart Automated Forex Trading System for XAU/USD & Major Pairs. Proven Strategy. Real Results. Fully
-            Automated.</p>
-        <a href="#leadform" class="btn">Get Free Demo</a>
+        <p>
+            Smart Automated Forex Trading System for XAU/USD & Major Pairs.
+            Proven Strategy. Real Results. Fully Automated.
+        </p>
+        <a href="#leadform" class="btn">EA  Enquiry  </a>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section class="container section">
         <h2>Why Choose Chottu Chart EA?</h2>
-        <p>Chottu Chart EA is an advanced trading robot designed with powerful indicators and risk management to
-            maximize profit and minimize loss.</p>
+        <p>
+           Chottu Chart EA is an advanced trading robot designed with powerful
+            indicators and risk management to maximize profit and minimize loss.
+        </p>
     </section>
 
-    <!-- Features -->
+    <!-- FEATURES -->
     <section class="container section">
         <div class="features">
-
             <div class="feature">
                 <h3>✔ Automated Trading</h3>
                 <p>100% hands-free trading using advanced algorithms.</p>
             </div>
-
             <div class="feature">
                 <h3>✔ Proven Strategy</h3>
                 <p>Backtested and optimized for consistent performance.</p>
             </div>
-
             <div class="feature">
                 <h3>✔ Risk Management</h3>
                 <p>Built-in stop loss, take profit, and drawdown control.</p>
             </div>
-
             <div class="feature">
                 <h3>✔ Unlimited Version</h3>
-                <p>No expiry. Lifetime access. Full features.</p>
+                <p>No expiry. Lifetime access.</p>
             </div>
-
             <div class="feature">
                 <h3>✔ Easy Installation</h3>
-                <p>Works on MT4 / MT5 platforms with simple setup.</p>
+                <p>Works on MT4 / MT5 platforms.</p>
             </div>
-
             <div class="feature">
                 <h3>✔ Email Support</h3>
-                <p>Support via chottuchart@gmail.com</p>
+                <p>chottuchart@gmail.com</p>
             </div>
-
         </div>
     </section>
 
-    <!-- Lead Form -->
+    <!-- FORM -->
     <section id="leadform" class="container section">
         <div class="formbox">
-
             <h2>Get Chottu Chart EA</h2>
             <p>Fill the form below. We will contact you shortly.</p>
 
-            <!-- Email Integration using FormSubmit -->
             <form action="https://formsubmit.co/chottuchart@gmail.com" method="POST">
-            
-                <!-- Disable Captcha -->
                 <input type="hidden" name="_captcha" value="false">
-            
-                <!-- Redirect After Submit -->
-                <input type="hidden" name="_next" value="thankyou.html">
-            
-                <!-- Email Subject -->
                 <input type="hidden" name="_subject" value="New Lead - Chottu Chart EA">
-            
-                <!-- Name -->
+
                 <input type="text" name="name" placeholder="Full Name" required>
-            
-                <!-- Email -->
                 <input type="email" name="email" placeholder="Email Address" required>
-            
-                <!-- WhatsApp -->
-                <input
-                  type="tel"
-                  name="whatsapp"
-                  placeholder="WhatsApp Number"
-                  pattern="[0-9]{10}"
-                  maxlength="10"
-                  inputmode="numeric"
-                  required
-                >
-            
-                <!-- Message -->
-                <textarea name="message" placeholder="Your Message" rows="6"  required></textarea>
-            
-                <!-- Submit -->
+                <input type="tel" name="whatsapp" placeholder="WhatsApp Number" pattern="[0-9]{10}" maxlength="10" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
                 <button type="submit">Submit</button>
-
-                <p id="successMessage" style="display:none;color:green;">Thanks! You’re registered.</p>
             </form>
-
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         &copy; 2026 Chottu Chart EA | Contact: chottuchart@gmail.com
     </footer>
