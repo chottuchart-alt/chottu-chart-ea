@@ -121,128 +121,150 @@
         }
 
         /* FLOATING BOT BUTTON */
-        .ai-btn{
-        position:fixed;
-        bottom:22px;
-        right:22px;
-        width:64px;
-        height:64px;
-        background:linear-gradient(135deg,#5f2c82,#49a09d);
-        border-radius:50%;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size:30px;
-        color:#fff;
-        cursor:pointer;
-        box-shadow:0 8px 25px rgba(0,0,0,.35);
-        z-index:999;
-        animation:pulse 2s infinite;
+        .ai-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #5f2c82, #49a09d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .35);
+            z-index: 999;
+            animation: pulse 2s infinite;
         }
-        
-        @keyframes pulse{
-        0%{box-shadow:0 0 0 0 rgba(95,44,130,.5)}
-        70%{box-shadow:0 0 0 18px rgba(95,44,130,0)}
-        100%{box-shadow:0 0 0 0 rgba(95,44,130,0)}
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(95, 44, 130, .5)
+            }
+
+            70% {
+                box-shadow: 0 0 0 18px rgba(95, 44, 130, 0)
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(95, 44, 130, 0)
+            }
         }
-        
+
         /* CHAT BOX */
-        .chat-box{
-        position:fixed;
-        bottom:100px;
-        right:22px;
-        width:340px;
-        background:rgba(255,255,255,.9);
-        backdrop-filter: blur(15px);
-        border-radius:18px;
-        box-shadow:0 20px 40px rgba(0,0,0,.3);
-        display:none;
-        flex-direction:column;
-        overflow:hidden;
-        animation:slideUp .4s ease;
-        z-index:999;
+        .chat-box {
+            position: fixed;
+            bottom: 100px;
+            right: 22px;
+            width: 340px;
+            background: rgba(255, 255, 255, .9);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideUp .4s ease;
+            z-index: 999;
         }
-        
-        @keyframes slideUp{
-        from{transform:translateY(30px);opacity:0}
-        to{transform:translateY(0);opacity:1}
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
         }
-        
+
         /* HEADER */
-        .chat-header{
-        background:linear-gradient(135deg,#5f2c82,#49a09d);
-        color:#fff;
-        padding:14px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        font-weight:600;
+        .chat-header {
+            background: linear-gradient(135deg, #5f2c82, #49a09d);
+            color: #fff;
+            padding: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
         }
-        
-        .chat-header span{
-        cursor:pointer;
+
+        .chat-header span {
+            cursor: pointer;
         }
-        
+
         /* BODY */
-        .chat-body{
-        padding:14px;
-        height:260px;
-        overflow-y:auto;
-        background:#f8f9fd;
+        .chat-body {
+            padding: 14px;
+            height: 260px;
+            overflow-y: auto;
+            background: #f8f9fd;
         }
-        
+
         /* BUBBLES */
-        .msg{
-        max-width:80%;
-        padding:10px 14px;
-        border-radius:16px;
-        margin-bottom:10px;
-        font-size:14px;
-        animation:fadeIn .3s ease;
+        .msg {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            animation: fadeIn .3s ease;
         }
-        
-        @keyframes fadeIn{
-        from{opacity:0;transform:translateY(6px)}
-        to{opacity:1;transform:translateY(0)}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
         }
-        
-        .user{
-        background:#5f2c82;
-        color:#fff;
-        margin-left:auto;
-        border-bottom-right-radius:4px;
+
+        .user {
+            background: #5f2c82;
+            color: #fff;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
         }
-        
-        .bot{
-        background:#e9ecf5;
-        color:#333;
-        margin-right:auto;
-        border-bottom-left-radius:4px;
+
+        .bot {
+            background: #e9ecf5;
+            color: #333;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
         }
-        
+
         /* INPUT */
-        .chat-input{
-        display:flex;
-        padding:10px;
-        background:#fff;
-        border-top:1px solid #ddd;
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: #fff;
+            border-top: 1px solid #ddd;
         }
-        
-        .chat-input input{
-        flex:1;
-        border:none;
-        padding:10px;
-        font-size:14px;
-        outline:none;
+
+        .chat-input input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            outline: none;
         }
-        
-        .chat-input button{
-        background:linear-gradient(135deg,#5f2c82,#49a09d);
-        color:#fff;
-        border:none;
-        padding:10px 16px;
-        border-radius:12px;
-        cursor:pointer;
+
+        .chat-input button {
+            background: linear-gradient(135deg, #5f2c82, #49a09d);
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 12px;
+            cursor: pointer;
         }
 
         @media(max-width:768px) {
@@ -269,12 +291,30 @@
 
     <section class="container">
         <div class="features">
-            <div class="feature">✔ Automated Trading</div>
-            <div class="feature">✔ Proven Strategy</div>
-            <div class="feature">✔ Risk Management</div>
-            <div class="feature">✔ Lifetime Access</div>
-            <div class="feature">✔ MT4 / MT5</div>
-            <div class="feature">✔ Email Support</div>
+            <div class="feature">
+                <h3>✔ Automated Trading</h3>
+                <p>100% hands-free trading using advanced algorithms.</p>
+            </div>
+            <div class="feature">
+                <h3>✔ Proven Strategy</h3>
+                <p>Backtested and optimized for consistent performance.</p>
+            </div>
+            <div class="feature">
+                <h3>✔ Risk Management</h3>
+                <p>Built-in stop loss, take profit, and drawdown control.</p>
+            </div>
+            <div class="feature">
+                <h3>✔ Unlimited Version</h3>
+                <p>No expiry. Lifetime access.</p>
+            </div>
+            <div class="feature">
+                <h3>✔ Easy Installation</h3>
+                <p>Works on MT4 / MT5 platforms.</p>
+            </div>
+            <div class="feature">
+                <h3>✔ Email Support</h3>
+                <p>chottuchart@gmail.com</p>
+            </div>
         </div>
     </section>
 
@@ -302,27 +342,27 @@
         <p>© 2026 Chottu Chart EA | chottuchart@gmail.com</p>
     </footer>
 
-    
+
     <!-- FLOAT BUTTON -->
     <div class="ai-btn" onclick="toggleChat()">🤖</div>
-    
+
     <!-- CHAT BOX -->
     <div class="chat-box" id="chatBox">
         <div class="chat-header">
             Chottu AI Bot ✨
             <span onclick="toggleChat()">✖</span>
         </div>
-    
+
         <div class="chat-body" id="chatBody">
             <div class="msg bot">👋 Welcome to Chottu Chart AI </div>
         </div>
-    
+
         <div class="chat-input">
             <input id="chatInput" placeholder="Ask about trading...">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-    
+
     <script>
         function toggleChat(){
         let box=document.getElementById("chatBox");
@@ -341,18 +381,53 @@
         let t=msg.toLowerCase();
         let reply="Support team will guide you further 🙂";
     
-        if(t.includes("price")) reply="💰 Price depends on version. Lifetime plan available.";
-        else if(t.includes("demo")) reply="🔥 Yes! Free demo available. Try & decide.";
-        else if(t.includes("profit")) reply="📈 Profit depends on market & risk. EA built for consistency.";
-        else if(t.includes("risk")) reply="🛡️ Built-in stop loss & drawdown control.";
-        else if(t.includes("mt4")||t.includes("mt5")) reply="✅ Works on both MT4 & MT5.";
-        else if(t.includes("gold")) reply="🥇 Optimized for XAU/USD (Gold).";
-        else if(t.includes("hello")||t.includes("hi")) reply="👋 Welcome! Happy to help you.";
-        else if(t.includes("lot")||t. includes("lots")) reply="Recommended lot size: 0.01 per $1000 balance.";
-        else if(t.includes("install")||t.includes("How to get EA")) reply="Please fill the form Support team will guide you further. Full installation support provided.";
-        else if(text.includes("strategy")) reply="AI-based trend + price action strategy.";
-        else if(t.includes("account")) reply="Recommended brokers: ICMarkets, Exness, XM.";
-        else if(t.includes("thanks")||t.includes("thank you")) reply="You're welcome 😊 Happy trading!";
+        if(t.includes("price") || t.includes("cost")){
+        reply="💰 Price depends on version. Lifetime plan available.";
+        }
+        
+        else if(t.includes("demo") || t.includes("trial")){
+        reply="🔥 Yes! Free demo available. Try & decide.";
+        }
+        
+        else if(t.includes("profit") || t.includes("income")){
+        reply="📈 Profit depends on market & risk. EA built for consistency.";
+        }
+        
+        else if(t.includes("risk") || t.includes("safe")){
+        reply="🛡️ Built-in stop loss & drawdown control.";
+        }
+        
+        else if(t.includes("mt4") || t.includes("mt5")){
+        reply="✅ Works on both MT4 & MT5.";
+        }
+        
+        else if(t.includes("gold") || t.includes("xau")){
+        reply="🥇 Optimized for XAU/USD (Gold).";
+        }
+        
+        else if(t.includes("hello") || t.includes("hi")){
+        reply="👋 Welcome! Happy to help you.";
+        }
+        
+        else if(t.includes("lot") || t.includes("lots")){
+        reply="Recommended lot size: 0.01 per $1000 balance.";
+        }
+        
+        else if(t.includes("install") || t.includes("get ea") || t.includes("buy")){
+        reply="Please fill the form. Support team will guide you. Full installation support provided.";
+        }
+        
+        else if(t.includes("strategy") || t.includes("trading")){
+        reply="🤖 AI-based trend + price action strategy.";
+        }
+        
+        else if(t.includes("account") || t.includes("broker")){
+        reply="Recommended brokers: ICMarkets, Exness, XM.";
+        }
+        
+        else if(t.includes("thanks") || t.includes("thank you")){
+        reply="You're welcome 😊 Happy trading!";
+        }
 
     
         setTimeout(()=>{
